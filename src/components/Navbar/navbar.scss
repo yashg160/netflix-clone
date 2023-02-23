@@ -1,0 +1,108 @@
+@import '../../styles/screens.scss';
+
+.navbar {
+  z-index: 10000;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to bottom, rgb(0, 0, 0), transparent);
+
+    a {
+      border: none;
+      outline: none;
+    }
+
+    @include mobileViewport {
+      padding: 16px 24px;
+
+      .logo-picture {
+        max-width: 72px;
+      }
+
+      .display-picture {
+        max-width: 32px;
+        border-radius: 4px;
+      }
+    }
+
+    @include tabletOnlyViewport {
+      padding: 16px 24px;
+
+      .logo-picture {
+        max-width: 80px;
+      }
+
+      .display-picture {
+        max-width: 40px;
+        border-radius: 4px;
+      }
+    }
+
+    @include smallLaptopViewport {
+      padding: 24px 24px;
+
+      .logo-picture {
+        max-width: 88px;
+      }
+
+      .display-picture {
+        max-width: 40px;
+        border-radius: 4px;
+      }
+    }
+
+    @include laptopViewport {
+      padding: 24px 24px;
+
+      .logo-picture {
+        max-width: 96px;
+      }
+
+      .display-picture {
+        max-width: 40px;
+        border-radius: 4px;
+      }
+    }
+
+    @include largeLaptopViewport {
+      padding: 24px;
+
+      .logo-picture {
+        max-width: 96px;
+      }
+
+      .display-picture {
+        max-width: 40px;
+        border-radius: 4px;
+      }
+    }
+
+    @include largeViewport {
+      padding: 24px;
+
+      .logo-picture {
+        max-width: 96px;
+      }
+
+      .display-picture {
+        max-width: 40px;
+        border-radius: 4px;
+      }
+    }
+
+    @include extraLargeViewport {
+      padding: 24px 40px;
+
+      .logo-picture {
+        max-width: 96px;
+      }
+
+      .display-picture {
+        max-width: 40px;
+        border-radius: 4px;
+      }
+    }
+  }
+}

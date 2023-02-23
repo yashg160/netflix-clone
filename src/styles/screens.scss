@@ -1,0 +1,47 @@
+@mixin mobileViewport {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin tabletOnlyViewport {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin smallLaptopViewport {
+  @media only screen and (min-width: 992px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin laptopViewport {
+  @media only screen and (min-width: 1280px) and (max-width: 1439px) {
+    @content;
+  }
+}
+
+@mixin largeLaptopViewport {
+  @media only screen and (min-width: 1440px) and (max-width: 1649px) {
+    @content;
+  }
+}
+
+@mixin largeViewport {
+  @media only screen and (min-width: 1650px) and (max-width: 1919px) {
+    @content;
+  }
+}
+
+@mixin extraLargeViewport {
+  @media only screen and (min-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin macViewport {
+  @media only screen and (min-width: 1280px) and (max-width: 1280px) {
+    @content;
+  }
+}

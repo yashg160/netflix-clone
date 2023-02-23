@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+.global-container {
+  width: 100%;
+  max-width: 1366px;
+  margin: 0px auto;
+  max-width: 1280px;
+}
+
+@media only screen and (max-width: 767px) {
+  .global-container {
+    max-width: initial;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .global-container {
+    max-width: 992px;
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  .global-container {
+    max-width: 1280px;
+  }
+}
+
+@media only screen and (min-width: 1367px) and (max-width: 1440px) {
+  .global-container {
+    max-width: 1366px;
+  }
+}
+
+@media only screen and (min-width: 1441px) {
+  .global-container {
+    max-width: initial;
+  }
+}
