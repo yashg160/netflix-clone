@@ -1,0 +1,78 @@
+@import '../../styles/screens.scss';
+
+.preview-list-container {
+  .list-header {
+    margin: 0px;
+    font-size: 24px;
+    color: whitesmoke;
+    font-family: Nunito;
+  }
+
+  .list-content {
+    max-width: 100%;
+    overflow-y: hide;
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .list-item {
+      cursor: pointer;
+      display: inline-block;
+      transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  @include mobileViewport {
+  }
+
+  @include tabletOnlyViewport {
+  }
+
+  @include smallLaptopViewport {
+  }
+
+  @include laptopViewport {
+  }
+
+  @include largeLaptopViewport {
+  }
+
+  @include largeViewport {
+  }
+
+  @include extraLargeViewport {
+    padding-top: 16px;
+
+    .list-content {
+      padding: 32px 0px;
+
+      .list-item {
+        width: 180px;
+        height: 270px;
+        margin-right: 12px;
+
+        &:hover {
+          transform: scale(1.12, 1.12);
+          transform-origin: bottom center;
+        }
+
+        &:first-child {
+          transform-origin: bottom left;
+        }
+
+        &:last-child {
+          transform-origin: bottom right;
+        }
+      }
+    }
+  }
+}
