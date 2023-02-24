@@ -1,11 +1,13 @@
 @import '../../styles/screens.scss';
 
 .preview-list-container {
+  z-index: 10;
+  position: relative; // Position given for the z index property to take effect
+
   .list-header {
     margin: 0px;
     font-size: 24px;
     color: whitesmoke;
-    font-family: Nunito;
   }
 
   .list-content {

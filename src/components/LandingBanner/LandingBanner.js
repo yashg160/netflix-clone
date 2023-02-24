@@ -53,10 +53,7 @@ const LandingBanner = () => {
             </button>
           </div>
         </div>
-
-        {/* <img
-          src={`${process.env.REACT_APP_IMAGE_BASE_PATH}${trendingContentData.poster_path}`}
-        /> */}
+        <div className='colorfix'></div>
       </div>
     </div>
   );
