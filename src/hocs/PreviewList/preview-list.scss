@@ -34,21 +34,183 @@
   }
 
   @include mobileViewport {
+    .list-header {
+      font-size: 14px;
+    }
+
+    .list-content {
+      padding: 20px 0px;
+
+      .list-item {
+        width: 106px;
+        height: 160px;
+        margin-right: 8px;
+
+        &:hover {
+          transform: scale(1.12, 1.12);
+          transform-origin: bottom center;
+        }
+
+        &:first-child {
+          transform-origin: bottom left;
+        }
+
+        &:last-child {
+          transform-origin: bottom right;
+        }
+      }
+    }
   }
 
   @include tabletOnlyViewport {
+    padding-top: 8px;
+
+    .list-header {
+      font-size: 16px;
+    }
+
+    .list-content {
+      padding: 24px 0px;
+
+      .list-item {
+        width: 128px;
+        height: 192px;
+        margin-right: 8px;
+
+        &:hover {
+          transform: scale(1.12, 1.12);
+          transform-origin: bottom center;
+        }
+
+        &:first-child {
+          transform-origin: bottom left;
+        }
+
+        &:last-child {
+          transform-origin: bottom right;
+        }
+      }
+    }
   }
 
   @include smallLaptopViewport {
+    padding-top: 8px;
+
+    .list-header {
+      font-size: 20px;
+    }
+
+    .list-content {
+      padding: 24px 0px;
+
+      .list-item {
+        width: 128px;
+        height: 192px;
+        margin-right: 8px;
+
+        &:hover {
+          transform: scale(1.12, 1.12);
+          transform-origin: bottom center;
+        }
+
+        &:first-child {
+          transform-origin: bottom left;
+        }
+
+        &:last-child {
+          transform-origin: bottom right;
+        }
+      }
+    }
   }
 
   @include laptopViewport {
+    padding-top: 16px;
+
+    .list-header {
+      font-size: 20px;
+    }
+
+    .list-content {
+      padding: 28px 0px;
+
+      .list-item {
+        width: 148px;
+        height: 221px;
+        margin-right: 12px;
+
+        &:hover {
+          transform: scale(1.12, 1.12);
+          transform-origin: bottom center;
+        }
+
+        &:first-child {
+          transform-origin: bottom left;
+        }
+
+        &:last-child {
+          transform-origin: bottom right;
+        }
+      }
+    }
   }
 
   @include largeLaptopViewport {
+    padding-top: 16px;
+
+    .list-header {
+      font-size: 20px;
+    }
+
+    .list-content {
+      padding: 28px 0px;
+
+      .list-item {
+        width: 148px;
+        height: 221px;
+        margin-right: 12px;
+
+        &:hover {
+          transform: scale(1.12, 1.12);
+          transform-origin: bottom center;
+        }
+
+        &:first-child {
+          transform-origin: bottom left;
+        }
+
+        &:last-child {
+          transform-origin: bottom right;
+        }
+      }
+    }
   }
 
   @include largeViewport {
+    padding-top: 16px;
+
+    .list-content {
+      padding: 32px 0px;
+
+      .list-item {
+        width: 180px;
+        height: 270px;
+        margin-right: 12px;
+
+        &:hover {
+          transform: scale(1.12, 1.12);
+          transform-origin: bottom center;
+        }
+
+        &:first-child {
+          transform-origin: bottom left;
+        }
+
+        &:last-child {
+          transform-origin: bottom right;
+        }
+      }
+    }
   }
 
   @include extraLargeViewport {
