@@ -2,8 +2,8 @@
   top: 0px;
   left: 0px;
   right: 0px;
+  z-index: 7;
   bottom: 0px;
-  z-index: 10;
   position: fixed;
 
   .modal-backdrop {
@@ -12,5 +12,25 @@
     cursor: pointer;
     background-color: rgb(20, 20, 20);
     transition: opacity 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .modal-content-wrapper {
+    top: 0px;
+    bottom: 0px;
+    width: 800px;
+    position: fixed;
+    margin: 0px auto;
+    left: calc((100% - 800px) / 2);
+    right: calc((100% - 800px) / 2);
+    transition: transform 0.25s cubic-bezier(0.77, 0, 0.175, 1);
+
+    .modal-content {
+      width: 100%;
+      min-height: 50%;
+      max-height: 90%;
+      margin-top: 48px;
+      border-radius: 12px;
+      background-color: red;
+    }
   }
 }

@@ -21,12 +21,20 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
         setModalBackdropStyle({
           opacity: 0.8,
         });
+
+        setModalContentStyle({
+          transform: 'scale(1)',
+        });
       }, [10]);
     } else {
       document.body.style.overflow = 'auto';
 
       setModalBackdropStyle({
         opacity: 0,
+      });
+
+      setModalContentStyle({
+        transform: 'scale(0)',
       });
 
       setTimeout(() => {
@@ -50,6 +58,10 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
         style={modalBackdropStyle}
         onClick={(e) => handleBackdropClick(e)}
       ></div>
+
+      <div className='modal-content-wrapper' style={modalContentStyle}>
+        <div className='modal-content'></div>
+      </div>
     </div>
   );
 };
