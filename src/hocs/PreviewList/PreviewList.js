@@ -4,7 +4,14 @@ import './preview-list.scss';
 const PreviewList = ({ header, previewData }) => {
   return (
     <section className='preview-list-container'>
-      <h3 className='list-header'>{header}</h3>
+      <h3 className='list-header'>
+        <span className='header-wrapper'>
+          <a href='/' className='header-link'>
+            {header}
+            <span className='add-action'>Explore All ></span>
+          </a>
+        </span>
+      </h3>
       <div className='list-content'>
         {previewData?.map((previewDataItem) => {
           return (
