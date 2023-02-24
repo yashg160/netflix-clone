@@ -37,7 +37,7 @@ const LandingPageContent = ({}) => {
       .then((response) => {
         setComedyMovies(response.results);
       })
-      .catch((err) => console.error('Error while fetchin netflix originals'));
+      .catch((err) => console.error('Error while fetchin comedy movies'));
   }, []);
 
   return (

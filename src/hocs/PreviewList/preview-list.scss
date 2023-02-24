@@ -47,7 +47,7 @@
         margin-right: 8px;
 
         &:hover {
-          transform: scale(1.12, 1.12);
+          transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
 
@@ -78,7 +78,7 @@
         margin-right: 8px;
 
         &:hover {
-          transform: scale(1.12, 1.12);
+          transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
 
@@ -109,7 +109,7 @@
         margin-right: 8px;
 
         &:hover {
-          transform: scale(1.12, 1.12);
+          transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
 
@@ -140,7 +140,7 @@
         margin-right: 12px;
 
         &:hover {
-          transform: scale(1.12, 1.12);
+          transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
 
@@ -171,7 +171,7 @@
         margin-right: 12px;
 
         &:hover {
-          transform: scale(1.12, 1.12);
+          transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
 
@@ -198,7 +198,7 @@
         margin-right: 12px;
 
         &:hover {
-          transform: scale(1.12, 1.12);
+          transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
 
@@ -218,6 +218,7 @@
 
     .list-content {
       padding: 32px 0px;
+      margin-top: -12px;
 
       .list-item {
         width: 180px;
@@ -225,7 +226,7 @@
         margin-right: 12px;
 
         &:hover {
-          transform: scale(1.12, 1.12);
+          transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
 
