@@ -1,12 +1,12 @@
 import React from 'react';
 import './preview-list.scss';
 
-const PreviewList = ({ header, previewData }) => {
+const PreviewList = ({ header, previewData, onDataItemClick }) => {
   const handleListItemClick = (event, dataItem) => {
     event.preventDefault();
     event.stopPropagation();
 
-    console.log('Item Clicked -', dataItem);
+    onDataItemClick && onDataItemClick(dataItem);
   };
 
   return (
