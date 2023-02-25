@@ -113,7 +113,7 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
       <div className='modal-content-wrapper' style={modalContentStyle}>
         <div className='modal-content'>
           <button
-            className='close-button'
+            className='button-action button-circle button-highlight close-button'
             onClick={(e) => handleCloseButtonClick(e)}
           >
             <svg viewBox='0 0 24 24'>
@@ -139,13 +139,13 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
             </h3>
 
             <div className='actions-container'>
-              <button className='action-button button-play'>
+              <button className='button-action button-play'>
                 <img src='play.svg' />
                 Play
               </button>
 
               <button
-                className='button-complete'
+                className='button-action button-circle button-highlight button-size-fix button-complete'
                 // onClick={(e) => handleCloseButtonClick(e)}
               >
                 <svg viewBox='0 0 16 16'>
@@ -154,7 +154,7 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
               </button>
 
               <button
-                className='button-feedback'
+                className='button-action button-circle button-highlight button-size-fix button-feedback'
                 // onClick={(e) => handleCloseButtonClick(e)}
               >
                 <svg viewBox='0 0 16 16'>
@@ -163,7 +163,7 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
               </button>
 
               <button
-                className='button-mute'
+                className='button-action button-circle button-highlight button-size-fix button-mute'
                 // onClick={(e) => handleCloseButtonClick(e)}
               >
                 <svg viewBox='0 0 16 16'>

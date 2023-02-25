@@ -1,3 +1,5 @@
+@import '../../styles/screens.scss';
+
 .preview-modal-container {
   top: 0px;
   left: 0px;
@@ -15,13 +17,41 @@
   }
 
   .modal-content-wrapper {
-    top: 0px;
+    top: 48px;
     position: fixed;
-    margin-top: 48px;
     left: calc((100% - 640px) / 2);
     right: calc((100% - 640px) / 2);
     transform-origin: center bottom;
     transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+
+    .yt-player-container {
+      width: 100%;
+      height: 100%;
+
+      .yt-iframe {
+        width: 100%;
+      }
+    }
+
+    @include mobileViewport {
+      left: calc((100% - 384px) / 2);
+      right: calc((100% - 384px) / 2);
+    }
+
+    @include laptopViewport {
+      left: calc((100% - 480px) / 2);
+      right: calc((100% - 480px) / 2);
+    }
+
+    @include largeViewport {
+      left: calc((100% - 720px) / 2);
+      right: calc((100% - 720px) / 2);
+    }
+
+    @include extraLargeViewport {
+      left: calc((100% - 800px) / 2);
+      right: calc((100% - 800px) / 2);
+    }
 
     .modal-content {
       overflow: hidden;
@@ -30,25 +60,35 @@
       box-shadow: 0px 0px 6px black;
       background-color: rgb(20, 20, 20);
 
+      .button-action {
+        border: none;
+        cursor: pointer;
+        transition: all 0.15s ease-in-out;
+      }
+
+      .button-highlight {
+        background: rgb(20, 20, 20);
+        outline: 2px solid rgba(245, 245, 245, 0.5);
+
+        &:hover {
+          outline: 2px solid whitesmoke;
+        }
+      }
+
+      .button-circle {
+        border-radius: 50%;
+      }
+
       .close-button {
         top: 12px;
         right: 12px;
         width: 40px;
         height: 40px;
-        border: none;
-        cursor: pointer;
         position: absolute;
-        border-radius: 50%;
-        background: rgb(20, 20, 20);
         outline: 2px solid transparent;
-        transition: all 0.15s ease-in-out;
 
         svg {
           fill: whitesmoke;
-        }
-
-        &:hover {
-          outline: 2px solid whitesmoke;
         }
       }
 
@@ -63,6 +103,13 @@
           color: whitesmoke;
         }
 
+        .button-size-fix {
+          min-width: 42px;
+          max-width: 42px;
+          max-height: 42px;
+          min-height: 42px;
+        }
+
         .actions-container {
           gap: 12px;
           width: 100%;
@@ -70,16 +117,15 @@
           align-items: center;
           justify-content: flex-start;
 
-          .action-button {
-            border: none;
-            outline: none;
+          .button-play {
             display: flex;
-            cursor: pointer;
+            color: black;
             font-size: 20px;
             font-weight: 700;
             border-radius: 4px;
             padding: 4px 16px;
             align-items: center;
+            background-color: white;
             justify-content: center;
 
             img {
@@ -87,97 +133,63 @@
             }
           }
 
-          .button-play {
-            color: black;
-            background-color: white;
-          }
-
           .button-complete {
-            cursor: pointer;
-            border: none;
             display: flex;
-            min-width: 42px;
-            max-width: 42px;
-            max-height: 42px;
-            min-height: 42px;
-            border-radius: 50%;
             align-items: center;
             justify-content: center;
-            transition: all 0.15s ease-in-out;
-            background-color: rgb(20, 20, 20);
-            outline: 2px solid rgba(245, 245, 245, 0.5);
-            svg {
-              fill: whitesmoke;
-              min-width: 32px;
-              max-width: 40px;
-            }
-
-            &:hover {
-              outline: 2px solid rgb(245, 245, 245);
-            }
-          }
-
-          .button-feedback {
-            cursor: pointer;
-            border: none;
-            display: flex;
-            min-width: 42px;
-            max-width: 42px;
-            max-height: 42px;
-            min-height: 42px;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.15s ease-in-out;
-            background-color: rgb(20, 20, 20);
-            outline: 2px solid rgba(245, 245, 245, 0.5);
-            svg {
-              fill: whitesmoke;
-              min-width: 26px;
-              max-width: 26px;
-            }
-
-            &:hover {
-              outline: 2px solid rgb(245, 245, 245);
-            }
-          }
-
-          .button-mute {
-            cursor: pointer;
-            border: none;
-            display: flex;
-            min-width: 42px;
-            max-width: 42px;
-            max-height: 42px;
-            min-height: 42px;
-            margin-left: auto;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.15s ease-in-out;
-            background-color: rgb(20, 20, 20);
-            outline: 2px solid rgba(245, 245, 245, 0.5);
             svg {
               fill: whitesmoke;
               min-width: 32px;
               max-width: 32px;
             }
+          }
 
-            &:hover {
-              outline: 2px solid rgb(245, 245, 245);
+          .button-feedback {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+              fill: whitesmoke;
+              min-width: 26px;
+              max-width: 26px;
+            }
+          }
+
+          .button-mute {
+            display: flex;
+            margin-left: auto;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+              fill: whitesmoke;
+              min-width: 32px;
+              max-width: 32px;
             }
           }
         }
       }
-
-      .yt-player-container {
-        width: 100%;
-        height: 100%;
-
-        .yt-iframe {
-          width: 100%;
-        }
-      }
     }
+  }
+
+  @include mobileViewport {
+  }
+
+  @include tabletOnlyViewport {
+  }
+
+  @include smallLaptopViewport {
+  }
+
+  @include laptopViewport {
+  }
+
+  @include largeLaptopViewport {
+  }
+
+  @include largeViewport {
+  }
+
+  @include extraLargeViewport {
   }
 }
