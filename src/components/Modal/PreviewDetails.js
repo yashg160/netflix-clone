@@ -14,6 +14,8 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
   const [modalBackdropStyle, setModalBackdropStyle] = useState({});
   const [modalContentStyle, setModalContentStyle] = useState({});
   const [previewData, setPreviewData] = useState({});
+  const [isMuted, setIsMuted] = useState(false);
+  const [playerTarget, setPlayerTarget] = useState(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -54,6 +56,16 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    if (playerTarget != null) {
+      if (isMuted) {
+        playerTarget.setVolume(0);
+      } else {
+        playerTarget.setVolume(100);
+      }
+    }
+  }, [isMuted]);
+
   const fetchPreviewData = () => {
     // Make network requests and get the data that we need to show in the display modal
     if (dataItem) {
@@ -91,6 +103,22 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
     onClose && onClose();
   };
 
+  const handleYoutubePlayerReady = (e) => {
+    // Set reference to target to change volume later
+    setPlayerTarget(e.target);
+
+    if (isMuted) {
+      e.target.setVolume(0);
+    }
+  };
+
+  const handleSoundClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    setIsMuted((v) => !v);
+  };
+
   const opts = {
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
@@ -98,6 +126,7 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
       controls: 0,
       disablekb: 1,
       fs: 0,
+      modestbranding: 1,
       iv_load_policy: 3,
     },
   };
@@ -127,6 +156,7 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
               iframeClassName='yt-iframe'
               className='yt-player-container'
               videoId={previewData.youtubeVideoId}
+              onReady={(e) => handleYoutubePlayerReady(e)}
             />
           )}
 
@@ -164,11 +194,21 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
 
               <button
                 className='button-action button-circle button-highlight button-size-fix button-mute'
-                // onClick={(e) => handleCloseButtonClick(e)}
+                onClick={(e) => handleSoundClick(e)}
               >
-                <svg viewBox='0 0 16 16'>
-                  <path d='M6.717 3.55A.5.5 0 017 4v8a.5.5 0 01-.812.39L3.825 10.5H1.5A.5.5 0 011 10V6a.5.5 0 01.5-.5h2.325l2.363-1.89a.5.5 0 01.529-.06zM6 5.04L4.312 6.39A.5.5 0 014 6.5H2v3h2a.5.5 0 01.312.11L6 10.96V5.04zm7.854.606a.5.5 0 010 .708L12.207 8l1.647 1.646a.5.5 0 01-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 01-.708-.708L10.793 8 9.146 6.354a.5.5 0 11.708-.708L11.5 7.293l1.646-1.647a.5.5 0 01.708 0z' />
-                </svg>
+                {isMuted && (
+                  <svg viewBox='0 0 16 16' className='muted-true'>
+                    <path d='M6.717 3.55A.5.5 0 017 4v8a.5.5 0 01-.812.39L3.825 10.5H1.5A.5.5 0 011 10V6a.5.5 0 01.5-.5h2.325l2.363-1.89a.5.5 0 01.529-.06zM6 5.04L4.312 6.39A.5.5 0 014 6.5H2v3h2a.5.5 0 01.312.11L6 10.96V5.04zm7.854.606a.5.5 0 010 .708L12.207 8l1.647 1.646a.5.5 0 01-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 01-.708-.708L10.793 8 9.146 6.354a.5.5 0 11.708-.708L11.5 7.293l1.646-1.647a.5.5 0 01.708 0z' />
+                  </svg>
+                )}
+
+                {!isMuted && (
+                  <svg viewBox='0 0 24 24'>
+                    <path d='M11.553 3.064A.75.75 0 0112 3.75v16.5a.75.75 0 01-1.255.555L5.46 16H2.75A1.75 1.75 0 011 14.25v-4.5C1 8.784 1.784 8 2.75 8h2.71l5.285-4.805a.75.75 0 01.808-.13zM10.5 5.445l-4.245 3.86a.75.75 0 01-.505.195h-3a.25.25 0 00-.25.25v4.5c0 .138.112.25.25.25h3a.75.75 0 01.505.195l4.245 3.86V5.445z' />
+                    <path d='M18.718 4.222a.75.75 0 011.06 0c4.296 4.296 4.296 11.26 0 15.556a.75.75 0 01-1.06-1.06 9.5 9.5 0 000-13.436.75.75 0 010-1.06z' />
+                    <path d='M16.243 7.757a.75.75 0 10-1.061 1.061 4.5 4.5 0 010 6.364.75.75 0 001.06 1.06 6 6 0 000-8.485z' />
+                  </svg>
+                )}
               </button>
             </div>
           </div>
