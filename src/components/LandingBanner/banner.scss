@@ -63,9 +63,9 @@
 
       @include mobileViewport {
         left: 24px;
-        bottom: 24px;
-        width: 50%;
-        max-width: 200px;
+        width: 75%;
+        bottom: 48px;
+        max-width: 320px;
 
         .description-title {
           font-size: 12px;

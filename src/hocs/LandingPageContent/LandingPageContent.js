@@ -59,6 +59,7 @@ const LandingPageContent = ({}) => {
     <section className='page-content'>
       <div className='global-container'>
         <PreviewList
+          showPortraitPoster
           header='Only On Netflix'
           previewData={netflixOriginals}
           onDataItemClick={(dataItem) => handleDataItemClick(dataItem)}

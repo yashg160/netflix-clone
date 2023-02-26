@@ -1,7 +1,12 @@
 import React from 'react';
 import './preview-list.scss';
 
-const PreviewList = ({ header, previewData, onDataItemClick }) => {
+const PreviewList = ({
+  header,
+  previewData,
+  onDataItemClick,
+  showPortraitPoster,
+}) => {
   const handleListItemClick = (event, dataItem) => {
     event.preventDefault();
     event.stopPropagation();
@@ -24,13 +29,26 @@ const PreviewList = ({ header, previewData, onDataItemClick }) => {
         {previewData?.map((previewDataItem) => {
           return (
             <div
-              className='list-item'
+              className={
+                showPortraitPoster
+                  ? 'list-item list-item-portrait'
+                  : 'list-item'
+              }
               key={previewDataItem.id}
               onClick={(event) => handleListItemClick(event, previewDataItem)}
             >
-              <img
-                src={`${process.env.REACT_APP_IMAGE_BASE_PATH}${previewDataItem.poster_path}`}
-              />
+              {!showPortraitPoster && (
+                <img
+                  src={`${process.env.REACT_APP_IMAGE_BASE_PATH}${previewDataItem.backdrop_path}`}
+                />
+              )}
+
+              {showPortraitPoster && (
+                <img
+                  src={`${process.env.REACT_APP_IMAGE_BASE_PATH}${previewDataItem.poster_path}`}
+                />
+              )}
+
               <div className='add-action-button'>
                 <svg viewBox='0 0 512 512'>
                   <path d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z' />

@@ -75,18 +75,21 @@
 
   @include mobileViewport {
     .list-header {
-      font-size: 14px;
+      font-size: 16px;
     }
 
     .list-content {
+      margin-top: -8px;
+      margin-bottom: 8px;
       padding: 20px 0px;
 
       .list-item {
-        width: 106px;
-        height: 160px;
         margin-right: 8px;
+        width: calc(1920px / 10);
+        height: calc(1080px / 10);
 
         &:hover {
+          z-index: 10;
           transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
@@ -98,6 +101,11 @@
         &:last-child {
           transform-origin: bottom right;
         }
+      }
+
+      .list-item-portrait {
+        width: 106px;
+        height: 160px;
       }
     }
   }
@@ -110,14 +118,15 @@
     }
 
     .list-content {
-      padding: 24px 0px;
+      padding: 16px 0px;
 
       .list-item {
-        width: 128px;
-        height: 192px;
         margin-right: 8px;
+        width: calc(1920px / 9);
+        height: calc(1080px / 9);
 
         &:hover {
+          z-index: 10;
           transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
@@ -129,6 +138,11 @@
         &:last-child {
           transform-origin: bottom right;
         }
+      }
+
+      .list-item-portrait {
+        width: 128px;
+        height: 192px;
       }
     }
   }
@@ -141,14 +155,16 @@
     }
 
     .list-content {
-      padding: 24px 0px;
+      padding: 20px 0px;
+      margin-top: -4px;
 
       .list-item {
-        width: 128px;
-        height: 192px;
         margin-right: 8px;
+        width: calc(1920px / 9);
+        height: calc(1080px / 9);
 
         &:hover {
+          z-index: 10;
           transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
@@ -161,25 +177,32 @@
           transform-origin: bottom right;
         }
       }
+
+      .list-item-portrait {
+        width: 128px;
+        height: 192px;
+      }
     }
   }
 
   @include laptopViewport {
-    padding-top: 16px;
+    padding-top: 8px;
 
     .list-header {
       font-size: 20px;
     }
 
     .list-content {
-      padding: 28px 0px;
+      padding: 20px 0px;
+      margin-top: -8px;
 
       .list-item {
-        width: 148px;
-        height: 221px;
         margin-right: 12px;
+        width: calc(1920px / 8);
+        height: calc(1080px / 8);
 
         &:hover {
+          z-index: 10;
           transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
@@ -191,6 +214,11 @@
         &:last-child {
           transform-origin: bottom right;
         }
+      }
+
+      .list-item-portrait {
+        width: 148px;
+        height: 221px;
       }
     }
   }
@@ -203,14 +231,16 @@
     }
 
     .list-content {
-      padding: 28px 0px;
+      padding: 20px 0px;
+      margin-top: -8px;
 
       .list-item {
-        width: 148px;
-        height: 221px;
         margin-right: 12px;
+        width: calc(1920px / 8);
+        height: calc(1080px / 8);
 
         &:hover {
+          z-index: 10;
           transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
@@ -223,6 +253,11 @@
           transform-origin: bottom right;
         }
       }
+
+      .list-item-portrait {
+        width: 148px;
+        height: 221px;
+      }
     }
   }
 
@@ -230,14 +265,16 @@
     padding-top: 16px;
 
     .list-content {
-      padding: 32px 0px;
+      padding: 32px 0px 24px 0px;
+      margin-top: -12px;
 
       .list-item {
-        width: 180px;
-        height: 270px;
         margin-right: 12px;
+        width: calc(1920px / 6);
+        height: calc(1080px / 6);
 
         &:hover {
+          z-index: 10;
           transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
@@ -249,6 +286,11 @@
         &:last-child {
           transform-origin: bottom right;
         }
+      }
+
+      .list-item-portrait {
+        width: 180px;
+        height: 270px;
       }
     }
   }
@@ -267,11 +309,12 @@
       margin-top: -12px;
 
       .list-item {
-        width: 180px;
-        height: 270px;
         margin-right: 12px;
+        width: calc(1920px / 6);
+        height: calc(1080px / 6);
 
         &:hover {
+          z-index: 10;
           transform: scale(1.08, 1.08);
           transform-origin: bottom center;
         }
@@ -294,6 +337,11 @@
             padding: 6px;
           }
         }
+      }
+
+      .list-item-portrait {
+        width: 180px;
+        height: 270px;
       }
     }
   }
