@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 
-import { TMDB_API_KEY } from '../../common/APIKeys';
-
 import './preview-details.scss';
 
 const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
@@ -69,7 +67,10 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
   const fetchPreviewData = () => {
     // Make network requests and get the data that we need to show in the display modal
     if (dataItem) {
-      movieTrailer(null, { apiKey: TMDB_API_KEY, tmdbId: dataItem.id })
+      movieTrailer(null, {
+        apiKey: process.env.REACT_APP_TMDB_API_KEY,
+        tmdbId: dataItem.id,
+      })
         .then((response) => {
           // Reponse is a complete youtube URL like https://www.youtube.com/watch?v=ZQSDbqFzcq8
           // We need to get the query param "v" for the player
