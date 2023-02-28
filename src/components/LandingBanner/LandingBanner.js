@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { fetchTrendingMovies } from '../../services/DataService';
 
+import PlayIcon from '../../assets/play.svg';
+import InfoIcon from '../../assets/info.svg';
 import './banner.scss';
 
 const LandingBanner = () => {
@@ -44,11 +46,11 @@ const LandingBanner = () => {
 
           <div className='description-buttons-container'>
             <button className='action-button button-play'>
-              <img src='play.svg' />
+              <img src={PlayIcon} />
               Play
             </button>
             <button className='action-button button-info'>
-              <img src='info.svg' />
+              <img src={InfoIcon} />
               More Info
             </button>
           </div>
