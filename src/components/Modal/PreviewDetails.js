@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import YouTube from 'react-youtube';
 import movieTrailer from 'movie-trailer';
 
+import PlayIcon from '../../assets/play.svg';
 import './preview-details.scss';
 
 const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
@@ -171,7 +172,7 @@ const PreviewDetailsModal = ({ isOpen, onClose, dataItem }) => {
 
             <div className='actions-container'>
               <button className='button-action button-play'>
-                <img src='play.svg' />
+                <img src={PlayIcon} />
                 Play
               </button>
 
