@@ -1,4 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
+import NetflixLogoImage from '../../assets/netflix-logo.png';
+import ProfileImage from '../../assets/profile.png';
 
 import './navbar.scss';
 
@@ -22,10 +24,10 @@ const Navbar = () => {
     <nav className='navbar'>
       <div className=''>
         <div className='container' ref={navContainerRef} style={currentStyle}>
-          <a href='/'>
-            <img src='/netflix-logo.png' className='logo-picture'></img>
+          <a href='/netflix-clone'>
+            <img src={NetflixLogoImage} className='logo-picture'></img>
           </a>
-          <img src='/profile.png' className='display-picture'></img>
+          <img src={ProfileImage} className='display-picture'></img>
         </div>
       </div>
     </nav>
